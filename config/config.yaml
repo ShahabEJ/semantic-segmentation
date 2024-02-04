@@ -1,0 +1,56 @@
+device: cuda
+
+# Data settings
+data:
+  train_path: dataset/train/
+  val_path: dataset/val/
+  test_path: dataset/test/
+  batch_size: 4
+  num_workers: 4
+
+# Model settings
+model:
+  in_channels: 3
+  out_channels: 1
+  features: [64, 128, 256, 512]
+
+# Training settings
+training:
+  epochs: 25
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+# Augmentation settings
+transformations:
+  train:
+    resize: [256, 256]
+    horizontal_flip: True
+    vertical_flip: True
+    rotation_degrees: 45
+  test:
+    resize: [256, 256]
+
+# Loss function settings
+loss:
+  name: DiceLoss # Should be either DiceLoss, BCEWithLogitsLossAndDiceLoss, or CrossEntropyLoss
+  smooth: 1 # Used if DiceLoss is selected
+  dice_weight: 0.5 # Used if BCEWithLogitsLossAndDiceLoss is selected
+  bce_weight: 0.5 # Used if BCEWithLogitsLossAndDiceLoss is selected
+
+# Optimizer settings
+optimizer:
+  type: Adam
+  lr: 0.001
+  weight_decay: 0.0001
+
+# Scheduler settings
+scheduler:
+  type: ReduceLROnPlateau
+  factor: 0.1
+  patience: 10
+  min_lr: 0.00001
+
+# Logging settings
+logging:
+  log_interval: 100
+  save_checkpoint_interval: 5
