@@ -1,10 +1,10 @@
 # Building Segmentation with U-Net
 
-This project implements a U-Net architecture for building segmentation from satellite images. The U-Net model is designed to accurately segment buildings, leveraging PyTorch for model training and evaluation.
+This project implements a U-Net architecture for binary semantic segmentation from satellite images. The solution has all the main components for training and monitoring a semantic-segmentaiton model, leveraging PyTorch for model training and evaluation.
 
 ## Features
 
-- U-Net architecture for semantic segmentation.
+- U-Net architecture.
 - Custom dataset loader for handling satellite images.
 - Metrics calculation including IoU, Dice coefficient, Precision, and Recall.
 - Data augmentation techniques for robust model training.
@@ -20,7 +20,7 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 1. Clone the repository:
-   https://github.com/ShahabEJ/Building-Segmentation.git
+   https://github.com/ShahabEJ/semantic-segmentation.git
 
 2. Install the required packages:
    ```
